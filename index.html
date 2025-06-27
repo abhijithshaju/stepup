@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoe Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <h2>Step <span>Up</span></h2>
+    </div>
+    <button class="cart-toggle-btn" id="toggleCartBtn">🛒 View Cart</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Step into <span class="id">Style</span></h1>
+      <p>Shop the latest collection of premium shoes</p>
+      <div class="auth-box">
+        <h2>Login or Sign Up</h2>
+        <input type="email" id="authEmail" placeholder="Email" />
+        <input type="password" id="authPassword" placeholder="Password" />
+        <button onclick="signup()">Sign Up</button>
+        <button onclick="login()">Login</button>
+        <p id="authMessage"></p>
+      </div>
+
+  </section>
+
+  <main id="mainContent" style="display: none;">
+    <section class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search shoes..." />
+      <input type="number" id="minPrice" placeholder="Min Price" min="0" step="100" />
+
+      <input type="number" id="maxPrice" placeholder="Max Price" min="0" step="100" />
+
+      <button onclick="applyFilters()">Apply Filter</button>
+    </section>
+
+    <section class="product-grid" id="products"></section>
+
+    <section class="trust-badges">
+      <h2>Why Shop With Us?</h2>
+      <div class="badges">
+        <div class="badge">✅ 100% Genuine</div>
+        <div class="badge">🚚 Free Shipping</div>
+        <div class="badge">🔒 Secure Payment</div>
+      </div>
+    </section>
+<section class="quick-contact">
+  <button id="contactUsBtn">Contact Us</button>
+  <div id="contactDetails" style="display: none; margin-top: 1rem;">
+    <p>Email: <a href="mailto:stepupshoestore@gmail.com">shoestore@example.com</a></p>
+    <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+  </div>
+</section>
+
+
+    <footer>
+      &copy; 2025 Step Up. All rights reserved.
+    </footer>
+  </main>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button onclick="closeCart()">Close</button>
+    </div>
+    <div id="cartMessage" style="color: red; margin-bottom: 1rem;"></div>
+    <div id="cartItems"></div>
+
+    <div id="cartTotal">Total: ₹0</div>
+    <textarea id="addressInput" placeholder="Enter delivery address..." rows="3"
+      style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea>
+    <select id="selectedSize" onchange="validateSizeSelection()"
+      style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+      <option value="">Select Size</option>
+    </select>
+    <section class="payment-section">
+  <h3>Select Payment Method</h3>
+
+  <div class="payment-option">
+    <input type="radio" name="payment" value="UPI" onchange="toggleUpiField()">
+    <label for="upi">
+      <span class="payment-icon">💰</span>
+      Pay by any UPI App
+    </label>
+  </div>
+
+  <div class="payment-option">
+<input type="radio" name="payment" value="Cash on Delivery" onchange="toggleUpiField()">
+    <label for="cod">
+      <span class="payment-icon">📦</span>
+      Cash on Delivery
+    </label>
+  </div>
+  <div id="upiIdField" style="display: none; margin-bottom: 1rem;">
+  <input type="text" id="upiIdInput" placeholder="Enter your UPI ID" style="width: 100%; padding: 0.5rem;" />
+</div>
+
+</section>
+
+    <div id="sizeWarning" style="color: red; margin-bottom: 1rem;"></div>
+
+    <button onclick="checkout()">Checkout</button>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQyxn4nXDEMEMxFjWfku1rQiWX458kWoQ",
+      authDomain: "shoestore-a0b18.firebaseapp.com",
+      projectId: "shoestore-a0b18",
+      storageBucket: "shoestore-a0b18.firebasestorage.app",
+      messagingSenderId: "1044598792018",
+      appId: "1:1044598792018:web:d4908167578b1d7feaa48b"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const emailField = document.getElementById("authEmail");
+    const passwordField = document.getElementById("authPassword");
+    const message = document.getElementById("authMessage");
+
+    window.signup = function () {
+      createUserWithEmailAndPassword(auth, emailField.value, passwordField.value)
+        .then((userCredential) => {
+          message.textContent = "✅ Account created successfully!";
+          message.style.color = "green";
+        })
+        .catch((error) => {
+          message.textContent = `⚠️ ${error.message}`;
+          message.style.color = "red";
+        });
+    };
+
+    window.login = function () {
+      signInWithEmailAndPassword(auth, emailField.value, passwordField.value)
+        .then((userCredential) => {
+          message.textContent = "✅ Logged in successfully!";
+          message.style.color = "green";
+          document.getElementById("mainContent").style.display = "block";
+          document.getElementById("mainContent").scrollIntoView({ behavior: "smooth" });
+        })
+        .catch((error) => {
+          message.textContent = `⚠️ ${error.message}`;
+          message.style.color = "red";
+        });
+    };
+  </script>
+ 
+
+</body>
+<div class="product-modal" id="productModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="" />
+    <h2 id="modalName"></h2>
+    <p id="modalPrice"></p>
+    <p id="modalSizes"><strong>Available Sizes:</strong> <span id="sizeList"></span></p>
+    <p id="modalDescription">📝 Stylish and comfortable – perfect for daily wear!</p>
+  </div>
+</div>
+
+</html>
