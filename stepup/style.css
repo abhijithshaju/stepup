@@ -540,3 +540,32 @@ body {
 .cart-header button:hover {
   color: #e74c3c; 
 }
+/* Stylish delivery address textarea */
+#addressInput {
+  border: 2px solid #00cc66;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#addressInput:focus {
+  border-color: #00994d;
+  box-shadow: 0 0 5px rgba(0, 204, 102, 0.4);
+  outline: none;
+}
+
+/* Stylish select size dropdown */
+#selectedSize {
+  border: 2px solid #00cc66;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#selectedSize:focus {
+  border-color: #00994d;
+  box-shadow: 0 0 5px rgba(0, 204, 102, 0.4);
+  outline: none;
+}

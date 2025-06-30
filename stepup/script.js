@@ -1,14 +1,14 @@
 const products = [
-  { id: 1, name: "Air Max 90", price: 4999, image: "https://i.imgur.com/1.jpg", sizes: ["6", "7", "8", "9", "10"] },
-  { id: 2, name: "Nike Revolution", price: 3499, image: "https://i.imgur.com/2.jpg", sizes: ["6", "7", "9", "10"] },
-  { id: 3, name: "Adidas Runner", price: 3999, image: "https://i.imgur.com/3.jpg", sizes: ["7", "8", "9", "10"] },
-  { id: 4, name: "Puma Smash", price: 2999, image: "https://i.imgur.com/4.jpg", sizes: ["6", "7", "8", "9"] },
-  { id: 5, name: "Reebok Flex", price: 2799, image: "https://i.imgur.com/5.jpg", sizes: ["6", "7", "8", "9", "10"] },
-  { id: 6, name: "Campus Comfort", price: 1999, image: "https://i.imgur.com/6.jpg", sizes: ["7", "8", "9", "10"] },
-  { id: 7, name: "Air Jordan 1", price: 4299, image: "https://i.imgur.com/1.jpg", sizes: ["6", "7", "8", "9", "10"] },
-  { id: 8, name: "Samba OG", price: 5499, image: "https://i.imgur.com/2.jpg", sizes: ["6", "7", "9", "10"] },
-  { id: 9, name: "New Balance 574", price: 5599, image: "https://i.imgur.com/3.jpg", sizes: ["7", "8", "9", "10"] },
-  { id: 10, name: "Puma Skyrocket", price: 2999, image: "https://i.imgur.com/4.jpg", sizes: ["6", "7", "8", "9"] },
+  { id: 1, name: "Air Max 90", price: 4999, image: "https://images-cdn.ubuy.co.in/67fbdb3369174ad2b80719d6-nike-air-max-90-ltr-cz5594-100-mens.jpg", sizes: ["6", "7", "8", "9", "10"] },
+  { id: 2, name: "Nike Revolution", price: 3499, image: "https://m.media-amazon.com/images/I/61CtN2Bp4XL.UY1000.jpg", sizes: ["6", "7", "9", "10"] },
+  { id: 3, name: "Adidas Runner", price: 3999, image: "https://sportsstation.in/cdn/shop/files/Response_Runner_Shoes_Black_ID7336_01_standard.jpg?v=1750398805", sizes: ["7", "8", "9", "10"] },
+  { id: 4, name: "Puma Smash", price: 2999, image: "https://www.bbassets.com/media/uploads/p/l/40341086_1-puma-by-cliq-mens-smash-pop-white-casual-sneakers.jpg", sizes: ["6", "7", "8", "9"] },
+  { id: 5, name: "Reebok Flex", price: 2799, image: "https://imagescdn.reebok.in/img/app/product/7/797917-9389356.jpg", sizes: ["6", "7", "8", "9", "10"] },
+  { id: 6, name: "Campus Comfort", price: 1999, image: "https://www.campusshoes.com/cdn/shop/files/LEVEL_LEVEL_WHT-L.GRY_01.webp?v=1751098173", sizes: ["7", "8", "9", "10"] },
+  { id: 7, name: "Air Jordan 1", price: 4299, image: "https://cdn.findyourkicks.com/uploads/all/7RG0VK12g4CI9mtqoKKl6dvG6cPhMnT75OkB1CJb.png", sizes: ["6", "7", "8", "9", "10"] },
+  { id: 8, name: "Samba OG", price: 5499, image: "https://assets.adidas.com/images/w_600,f_auto,q_auto/3bbecbdf584e40398446a8bf0117cf62_9366/Samba_OG_Shoes_White_B75806_01_00_standard.jpg", sizes: ["6", "7", "9", "10"] },
+  { id: 9, name: "New Balance 574", price: 5599, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB_WjAQa_OSAdLZ3AYi7JITE2pHQ4CqaJmlQ&s", sizes: ["7", "8", "9", "10"] },
+  { id: 10, name: "Puma Skyrocket", price: 2999, image: "https://shoppinginibiza.com/187117-large_default/puma-skyrocket-lite-379437-01-mens-black-shoes.jpg", sizes: ["6", "7", "8", "9"] },
 ];
 
 let cart = [];
